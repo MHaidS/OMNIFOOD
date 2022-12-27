@@ -1,0 +1,185 @@
+/* IN PROGRESS */
+
+/* 
+
+--- 01 TYPOGRAPHY SYSTEM
+- FONT SIZE SYSTEM (px)
+    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- FONT WEIGHTS
+  Default: 400
+
+- LINE HEIGHTS
+  Default: 1
+
+  
+  
+  --- 02 COLORS
+  - PRIMARY: #e67e22  
+  - TINTS: #fdf2e9
+  - SHADES: #cf711f
+  - ACCENTS: 
+  - GRAYS: 
+  #555
+  #333
+  
+  --- 03 SHADOWS
+  
+  --- 04 BORDER-RADIUS
+  
+  --- 05 WHITESPACE
+  
+  - SPACING SYSTEM (px)
+      2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* font-size: 10px; */
+  /* the root font-size; 1rem is now equivalent to 10px; by changing the font-size, we can completely change the entire layout; really handy for building responsive layouts; always start out w/ 10px to make calculation easier */
+  /*  10px / 16px = 0.625 = 62.5% */
+  /* percentage of user's browser font-size setting; using this technique respects the user's font-size setting */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #555;
+}
+
+.section-hero {
+  background-color: #fdf2e9;
+  /* always use padding when using a background-color; then add same spacing on 
+  .hero as well (gap) */
+  padding: 9.6rem 0;
+}
+
+.hero {
+  max-width: 130rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* background-color: blueviolet; */
+  gap: 9.6rem;
+  align-items: center;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.5;
+  margin-bottom: 4.8rem;
+}
+
+/* the original state before hover; this is where transition shd be made */
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 9px;
+
+  /* to animate background-color & color of 
+  .btn--outline:link & .btn--outline:visited */
+  /* put transition on orig 'state' */
+  /* transition: all 1s; */
+  transition: background-color 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+
+  /* margin-right: 1.6rem; ===> has the same effect as in .margin-right-sm helper class */
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: #cf711f;
+  /* background-color: red; */
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+
+  /* border: 3px solid #fff; ===> border added on the outside of the btn */
+  /* how to add the border inside of the btn: use 'box-shadow' instead */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.hero-img {
+  width: 100%;
+}
+
+/* can be reused not just for buttons */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+
+.delivered-meals {
+  /* we can use flexbox instead of grid since we don't really care about the size of the column */
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  /* instead of adding margin-bottom on the 2 buttons, add a margin-top on this class instead */
+  margin-top: 8rem;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  /* we don't usually have to set a width since it automatically gets adjusted but since there is a bug in the safari browser when the images are flex items, so, set the width to the same value to make the images squared  */
+  width: 4.8rem;
+  /* to make the images round, set to 50% if the img is squared */
+  border-radius: 50%;
+  /* will move the images 16px to the left but space between the last img & p is now gone; to resolve this, set the margin of the last img to '0' */
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
+}
+
+/* TINT & SHADE GENERATOR ==> https://maketintsandshades.com/ */
+
+/* CONTRAST CHECKER ==> https://coolors.co/ ===> click on TOOLS then select Contrast Checker */
