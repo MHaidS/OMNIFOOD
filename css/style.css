@@ -8,10 +8,14 @@
 
 - FONT WEIGHTS
   Default: 400
+  Medium => 500
+  Semi-bold => 600
+  Bold => 700
 
 - LINE HEIGHTS
   Default: 1
-
+  Small => 1.05
+  Paragraph default =>1.6
   
   
   --- 02 COLORS
@@ -26,7 +30,8 @@
   --- 03 SHADOWS
   
   --- 04 BORDER-RADIUS
-  
+      Default:  9px
+
   --- 05 WHITESPACE
   
   - SPACING SYSTEM (px)
@@ -42,9 +47,7 @@
 
 html {
   /* font-size: 10px; */
-  /* the root font-size; 1rem is now equivalent to 10px; by changing the font-size, we can completely change the entire layout; really handy for building responsive layouts; always start out w/ 10px to make calculation easier */
   /*  10px / 16px = 0.625 = 62.5% */
-  /* percentage of user's browser font-size setting; using this technique respects the user's font-size setting */
   font-size: 62.5%;
 }
 
@@ -58,6 +61,34 @@ body {
 /* ************************** */
 /* GENERAL REUSABLE COMPONENTS */
 /* ************************** */
+
+/* the element going to be used to center the contents of the page inside the browser viewport */
+.container {
+  /* 1140px */
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+/* reusable grid */
+.grid {
+  display: grid;
+  gap: 9.6rem;
+}
+
+/* variation of .grid */
+.grid--2-cols {
+  /* repeat(2, 1fr) ==> 1fr 1fr */
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 .heading-primary {
   font-size: 5.2rem;
   font-weight: 700;
@@ -75,6 +106,7 @@ body {
   font-size: 2rem;
   font-weight: 600;
   padding: 1.6rem 3.2rem;
+  /* px is used & not rem since this value is very small & not going to be changed */
   border-radius: 9px;
 
   /* to animate background-color & color of 
@@ -136,9 +168,56 @@ body {
 }
 
 /* ************************** */
-/* HERO SECTION */
+/* NAVIGATION */
 /* ************************** */
 
+.main-nav-list {
+  /* to get rid of the bullet pts */
+  list-style: none;
+  /* to display the list items side-by-side */
+  display: flex;
+  align-items: center;
+  /* to put some space bet. the list items */
+  gap: 3.2rem;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  display: inline-block;
+  /* remove the underline on the links */
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 1.8rem;
+  /* must be placed on the orig state */
+  transition: all 0.3s;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+}
+
+/* to make sure that .main-nav-link is always applied add the class & don't add any space at all*/
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  padding: 1.2rem 2.4rem;
+  border-radius: 9px;
+  color: #fff;
+  background-color: #e67e22;
+  /* the link is placed a bit lower than the rest ===> align-items: center in .main-nav-list */
+  /* no need to add transition anymore since this is being applied already via 
+  .main-nav-link */
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+
+/* ************************** */
+/* HERO SECTION */
+/* ************************** */
 .section-hero {
   background-color: #fdf2e9;
   /* always use padding when using a background-color; then add same spacing on 
@@ -204,6 +283,36 @@ body {
   color: #cf711f;
   font-weight: 700;
 }
+
+/* ************************** */
+/* HOW-IT-WORKS SECTION */
+/* ************************** */
+
+.section-how {
+  padding: 9.6rem 0;
+  background-color: orangered;
+}
+
+/* background-color extends fr the left to the right side all while keeping this in a nice container that is kept centered */
+/* .section-how div div {
+  padding: 100px;
+  font-size: 50px;
+  background-color: #333;
+} */
+
+/*  <div>Test 1</div> is no longer the 1st child; now it is <div class="container grid grid--2-cols"> */
+/* .section-how div:nth-child(1) {
+  background-color: aqua;
+}
+.section-how div:nth-child(2) {
+  background-color: blue;
+}
+.section-how div:nth-child(3) {
+  background-color: violet;
+}
+.section-how div:nth-child(4) {
+  background-color: yellow;
+} */
 
 /* TINT & SHADE GENERATOR ==> https://maketintsandshades.com/ */
 

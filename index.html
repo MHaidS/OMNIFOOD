@@ -14,20 +14,28 @@
   <link rel="stylesheet" href="css/style.css" />
   
   <title>Omnifood
-    ==> Bldg the Header
-    ==> Bldg the Navigation* 
+    ==> Setting up a Reusable Grid
   </title>
 
 </head>
 <body>
   <header class="header">
     <img class="logo" alt="Omnifood logo" src="img/omnifood-logo.png" />
+    <!-- The semantic way of creating the navigation nav-ul-li-a -->
     <nav class="main-nav">
-      Navigation
+      <ul class="main-nav-list">
+        <li><a class="main-nav-link" href="#">Section 1</a></li>
+        <li><a class="main-nav-link" href="#">Section 2</a></li>
+        <li><a class="main-nav-link" href="#">Section 3</a></li>
+        <li><a class="main-nav-link" href="#">Section 4</a></li>
+        <!-- have a call to action to the last item in the navigation; last child pseudo class can be used but creating another class will allow you to style the last item -->
+        <li><a class="main-nav-link nav-cta" href="#">Section 5</a></li>
+      </ul>
     </nav>
   </header>
   <main>
     <section class="section-hero">
+      <!-- the hero section's width must always be the biggest; reusable container can be used for the rest of the sections -->
       <div class="hero">
         <div class="hero-text-box">
           <h1 class="heading-primary">A healthy meal delivered to your door, every single day</h1>
@@ -55,6 +63,24 @@
         </div>
       </div>
     </section>
+
+    <section class="section-how">
+      <!-- moving "container grid grid--2-cols" to a separate div will extend the background-color from end to end -->
+      <div class="container grid grid--2-cols">
+        <div>Test 1</div>
+        <div>Test 2</div>
+        <div>Test 3</div>
+        <div>Test 4</div>
+      </div>
+    </section>
+    
+    <section class="section-how grid grid--4-cols">
+      <div>Test 1</div>
+      <div>Test 2</div>
+      <div>Test 3</div>
+      <div>Test 4</div>
+    </section>
+
   </main>
 </body>
 </html>
