@@ -15,9 +15,13 @@
 - LINE HEIGHTS
   Default: 1
   Small => 1.05
+  Medium => 1.2
   Paragraph default =>1.6
-  
-  
+ 
+- LETTER SPACING
+  -0.5px  
+  0.75px
+
   --- 02 COLORS
   - PRIMARY: #e67e22  
   - TINTS: #fdf2e9
@@ -89,13 +93,36 @@ body {
   grid-template-columns: repeat(4, 1fr);
 }
 
+.heading-primary,
+.heading-secondary {
+  font-weight: 700;
+  color: #333;
+  /* color: #45260a; */
+  color: #343a40;
+  letter-spacing: -0.5px;
+}
+
 .heading-primary {
   font-size: 5.2rem;
-  font-weight: 700;
   line-height: 1.05;
-  color: #333;
-  letter-spacing: -0.5px;
   margin-bottom: 3.2rem;
+}
+
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #cf711f;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  /* if the text is small & in uppercase, it will look better with more space between the letters */
+  letter-spacing: 0.75px;
 }
 
 /* the original state before hover; this is where transition shd be made */
@@ -290,7 +317,11 @@ body {
 
 .section-how {
   padding: 9.6rem 0;
-  background-color: orangered;
+  /* background-color: orangered; */
+}
+
+.step-img {
+  width: 50%;
 }
 
 /* background-color extends fr the left to the right side all while keeping this in a nice container that is kept centered */
@@ -315,5 +346,3 @@ body {
 } */
 
 /* TINT & SHADE GENERATOR ==> https://maketintsandshades.com/ */
-
-/* CONTRAST CHECKER ==> https://coolors.co/ ===> click on TOOLS then select Contrast Checker */
