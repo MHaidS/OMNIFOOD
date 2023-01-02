@@ -27,7 +27,7 @@
   - TINTS: 
   #fdf2e9
   #fae5d3
-  
+
   - SHADES: #cf711f
   - ACCENTS: 
   - GRAYS: 
@@ -38,6 +38,7 @@
   
   --- 04 BORDER-RADIUS
       Default:  9px
+      Medium: 11px
 
   --- 05 WHITESPACE
   
@@ -71,7 +72,6 @@ body {
 
 /* the element going to be used to center the contents of the page inside the browser viewport */
 .container {
-  /* 1140px */
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
@@ -155,7 +155,8 @@ body {
   .btn--outline:link & .btn--outline:visited */
   /* put transition on orig 'state' */
   /* transition: all 1s; */
-  transition: background-color 0.3s;
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
 }
 
 .btn--full:link,
@@ -186,7 +187,38 @@ body {
   box-shadow: inset 0 0 0 3px #fff;
 }
 
+.link:link,
+.link:visited {
+  display: inline-block;
+  color: #e67e22;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  /* another hack to remove the underline */
+  border-bottom: 1px solid transparent;
+}
+
+/* HELPER/SETTINGS CLASSES */
+
 /* can be reused not just for buttons */
 .margin-right-sm {
   margin-right: 1.6rem !important;
+}
+
+.margin-bottom-md {
+  margin-bottom: 4.3rem !important;
+}
+
+.center-text {
+  text-align: center;
+}
+
+strong {
+  font-weight: 500;
 }

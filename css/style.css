@@ -1,7 +1,7 @@
 /* ************************** */
 /* HEADER */
 /* ************************** */
-/* logo appears on top of the text on the leftmost side; use flexbox to push them on either end */
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -134,6 +134,40 @@
 }
 
 /* ************************** */
+/* FEATURED IN SECTION */
+/* ************************** */
+.section-featured {
+  padding: 4.8rem 0 3.2rem 0;
+}
+
+.heading-featured-in {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 2.4rem;
+  color: #999;
+}
+
+.logos {
+  /* img are inline-block elements; using flexbox on images will make it easier to put spaces between the images */
+  display: flex;
+  justify-content: space-between;
+}
+
+.logos img {
+  /* we use the height instead of the width to style the img to make them look natural */
+  height: 3.2rem;
+  /* will turn the img to gray but in varying degrees*/
+  /* filter: grayscale(100%); */
+  /* will turn the img completely black */
+  filter: brightness(0);
+  /* visibility of the image;this fades out the img; this is also a hack to turn the black img to gray */
+  opacity: 50%;
+}
+
+/* ************************** */
 /* HOW-IT-WORKS SECTION */
 /* ************************** */
 
@@ -223,3 +257,131 @@
 } */
 
 /* TINT & SHADE GENERATOR ==> https://maketintsandshades.com/ */
+
+/* ************************** */
+/* MEALS SECTION */
+/* ************************** */
+
+.section-meals {
+  padding: 9.6rem 0;
+}
+
+.meal {
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  border-radius: 11px;
+  /* to round the corners of upper left & rt corners of the img */
+  overflow: hidden;
+  transition: all 0.4s;
+}
+
+.meal:hover {
+  /* transform: translate(2rem, 2rem); */
+  transform: translateY(-1.2rem);
+  /* in order to do the animation, use the transition property on the orig state: .meal  */
+  box-shadow: 0 3.2rem 6.4rem rgba(0, 0, 0, 0.06);
+}
+
+/* this class must be created so that the padding won't apply on the img, only the rest of the content */
+.meal-content {
+  padding: 3.2rem 4.8rem 4.8rem 4.8rem;
+}
+
+.meal-tags {
+  margin-bottom: 1.2rem;
+
+  display: flex;
+  gap: 0.4rem;
+}
+
+.tag {
+  /* in order to apply paddings into it */
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #333;
+  /* any large value will do */
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+.tag--vegetarian {
+  background-color: #51cf66;
+}
+
+.tag--vegan {
+  background-color: #94d82d;
+}
+.tag--paleo {
+  background-color: #ffd43b;
+}
+
+.meal-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 3.2rem;
+}
+
+.meal-attributes {
+  list-style: none;
+  /* use flexbox to create space between the li items */
+  display: flex;
+  flex-direction: column;
+  /* gap acts like 'margin-bottom', no longer like margin-rt */
+  gap: 2rem;
+}
+
+.meal-attribute {
+  font-size: 1.8rem;
+  /* to align the icons & the txt w/in the span */
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.meal-icon {
+  /* ht & width must be of the same size bec icons are drawn in a rectangular box */
+  height: 2.4rem;
+  width: 2.4rem;
+  /* icons are treated like txt so using ,color' will work on the icons instead of stroke or fill */
+  color: #e67e22;
+}
+
+.meal-img {
+  width: 100%;
+}
+
+.all-recipes {
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
+}
+
+/* instead of heroicons, use https://ionic.io/ionicons */
+/* Usage
+   Basic Usage
+   copy & paste script near the </body> tag under 'Installation' section; then built-in icon from the Ionicons package can be used by populating the 'name' attribute on the 'ion-icon' component (go to 'Icons', select desired icon & copy code under 'Web Component Code' )
+   *ex===>
+   <ion-icon name="heart"></ion-icon>
+   
+*/ ;
