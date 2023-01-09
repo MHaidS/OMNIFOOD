@@ -31,6 +31,7 @@
   - SHADES: #cf711f
   - ACCENTS: 
   - GRAYS: 
+  #6f6f6f (lightest gray allowed for #fdf2e9)
   #555
   #333
   
@@ -70,8 +71,8 @@ body {
 /* GENERAL REUSABLE COMPONENTS */
 /* ************************** */
 
-/* the element going to be used to center the contents of the page inside the browser viewport */
 .container {
+  /* 1140px */
   max-width: 120rem;
   padding: 0 3.2rem;
   margin: 0 auto;
@@ -82,8 +83,19 @@ body {
   display: grid;
   column-gap: 6.4rem;
   row-gap: 9.6rem;
+  /* this creates additional bottom margins on all grids; create .grid:last-child to set margin-bottom to '0' if it is the last grid of the section */
+  /* margin-bottom: 9.6rem; */
 }
 
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
+
+/* a shorter way is to remove the margin-bottom fr .grid & remove 
+.grid:last-child entirely; then create this pseudo class*/
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
 /* variation of .grid */
 .grid--2-cols {
   /* repeat(2, 1fr) ==> 1fr 1fr */
@@ -106,7 +118,6 @@ body {
 .heading-tertiary {
   font-weight: 700;
   color: #333;
-  /* color: #45260a; */
   color: #343a40;
   letter-spacing: -0.5px;
 }
@@ -202,6 +213,26 @@ body {
   color: #cf711f;
   /* another hack to remove the underline */
   border-bottom: 1px solid transparent;
+}
+
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.list-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #e67e22;
 }
 
 /* HELPER/SETTINGS CLASSES */

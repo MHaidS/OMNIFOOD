@@ -7,7 +7,6 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fdf2e9;
-  /* to make the header stick at the top even when you scroll down */
   height: 9.6rem;
   padding: 0 4.8rem;
 }
@@ -235,27 +234,6 @@
   /* z-index: 10;  ===> this also makes the image appear in front of the circle */
 }
 
-/* background-color extends fr the left to the right side all while keeping this in a nice container that is kept centered */
-/* .section-how div div {
-  padding: 100px;
-  font-size: 50px;
-  background-color: #333;
-} */
-
-/*  <div>Test 1</div> is no longer the 1st child; now it is <div class="container grid grid--2-cols"> */
-/* .section-how div:nth-child(1) {
-  background-color: aqua;
-}
-.section-how div:nth-child(2) {
-  background-color: blue;
-}
-.section-how div:nth-child(3) {
-  background-color: violet;
-}
-.section-how div:nth-child(4) {
-  background-color: yellow;
-} */
-
 /* TINT & SHADE GENERATOR ==> https://maketintsandshades.com/ */
 
 /* ************************** */
@@ -357,31 +335,161 @@
   font-size: 1.8rem;
 }
 
-.list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 1.6rem;
-}
+/* ************************** */
+/* TESTIMONIALS SECTION */
+/* ************************** */
 
-.list-item {
-  font-size: 1.8rem;
-  display: flex;
+.section-testimonials {
+  /* applies on both "testimonials-container" & "gallery"; apply it on "testimonials-container" ONLY to remove the padding at the top of the imgs in "gallery"  */
+  /* padding: 9.6rem 0; */
+  background-color: #fdf2e9;
+
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; ==> % value can be used as well w/o the sign; the sum does not really have to equal 100 */
+  grid-template-columns: 55fr 45fr;
   align-items: center;
+}
+
+.testimonials-container {
+  padding: 9.6rem;
+}
+
+.testimonials {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 4.8rem;
+  column-gap: 8rem;
+}
+
+.testimonial-img {
+  /* img size increases or decreases when window is resized */
+  /* width: 100%;  */
+
+  /* make the images set to a fixed width */
+  width: 6.4rem;
+  border-radius: 50%;
+  margin-bottom: 1.2rem;
+}
+
+.testimonial-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 1.6rem;
+}
+
+.testimonial-name {
+  font-size: 1.6rem;
+  color: #6f6f6f;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.6rem;
+  padding: 1.6rem;
 }
 
-.list-icon {
-  width: 3rem;
-  height: 3rem;
-  color: #e67e22;
+.gallery-item {
+  /* this gives a zoom effect when we hover over the img */
+  overflow: hidden;
 }
 
-/* instead of heroicons, use https://ionic.io/ionicons */
-/* Usage
-   Basic Usage
-   copy & paste script near the </body> tag under 'Installation' section; then built-in icon from the Ionicons package can be used by populating the 'name' attribute on the 'ion-icon' component (go to 'Icons', select desired icon & copy code under 'Web Component Code' )
-   *ex===>
-   <ion-icon name="heart"></ion-icon>
-   
-*/ ;
+.gallery-item img {
+  /* to fix the space that appears between the images ( img ==> inline element ) */
+  display: block;
+  /* will make all imgs fit w/in the page */
+  width: 100%;
+  transition: all 0.4s;
+}
+
+.gallery-item img:hover {
+  /* transform: rotate(45deg); */
+  transform: scale(1.1);
+  /* transform: scale(2.2); */
+  /* to make it smooth, add 'transition' property on orig element for the animation; however, it overflows the parent element when we hover over the img; solution is to set overflow to hidden on .gallery-item   */
+}
+
+/* ************************** */
+/* PRICING SECTION */
+/* ************************** */
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+
+.pricing-plan {
+  /* transfer this to the 2nd plan to highlight it */
+  /* background-color: #fdf2e9; */
+  border-radius: 11px;
+  padding: 4.8rem;
+  width: 75%;
+}
+
+.pricing-plan--starter {
+  justify-self: end;
+  /* adding this though seemed to push the button 2px up; to fix this, give padding to both but the 2nd plan has to be bigger by 2px */
+  border: 2px solid #fdf2e9;
+  padding: 4.6rem;
+}
+
+.pricing-plan--complete {
+  background-color: #fdf2e9;
+  padding: 4.8rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.pricing-plan--complete::after {
+  content: "Best value";
+  position: absolute;
+  /* then make the position of the parent element, .pricing-plan--complete 'relative' */
+  top: 6%;
+  right: -18%;
+
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #333;
+  background-color: #ffd43b;
+  padding: 0.8rem 8rem;
+  transform: rotate(35deg);
+  /* get the desired position of the ribbon by playing around w/ the values of top & right (the padding as well) in %; then to hide the edges that has overflowed, use 'overflow: hidden' on the parent element */
+}
+
+.plan-header {
+  text-align: center;
+  margin-bottom: 4.8rem;
+}
+
+.plan-name {
+  color: #cf711f;
+  font-weight: 600;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.75;
+  margin-bottom: 3.2rem;
+}
+
+.plan-price {
+  font-size: 6.2rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.6rem;
+}
+
+.plan-price span {
+  font-size: 3rem;
+  font-weight: 500;
+  margin-right: 0.8rem;
+}
+
+.plan-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  color: #6f6f6f;
+}
+
+.plan-sign-up {
+  text-align: center;
+  margin-top: 4.8rem;
+}
