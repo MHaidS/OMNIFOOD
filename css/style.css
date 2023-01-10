@@ -20,7 +20,6 @@
 /* ************************** */
 
 .main-nav-list {
-  /* to get rid of the bullet pts */
   list-style: none;
   /* to display the list items side-by-side */
   display: flex;
@@ -492,4 +491,73 @@
 .plan-sign-up {
   text-align: center;
   margin-top: 4.8rem;
+}
+
+.plan-details {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.feature-icon {
+  color: #e67e22;
+  height: 3.2rem;
+  width: 3.2rem;
+  background-color: #fdf2e9;
+  margin-bottom: 3.2rem;
+  padding: 1.6rem;
+  border-radius: 50%;
+}
+.feature-title {
+  font-size: 2.4rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+}
+.feature-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+/* ************************** */
+/* CTA SECTION */
+/* ************************** */
+.section-cta {
+  padding: 9.6rem 0;
+}
+
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  /* the darker the bg-color, the darker the shadow needs to be */
+  /* background-color: #e67e22; */
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.15);
+  border-radius: 11px;
+
+  /* use background-img instead of background-color; the gradient is treated as though it is an image */
+  /* background-image: linear-gradient(360deg, red, #e67e22); */
+  /* background-image: linear-gradient(to left, red, #e67e22); */
+  /* gradient can also originate fr the corners */
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+
+  /* temporary */
+  height: 50rem;
+  overflow: hidden;
+}
+
+.cta-text-box {
+}
+
+.cta-img-box {
+  /* if img is too bright, overlay the same gradient on top of the img */
+  /* background-image: url("../img/eating.jpg"); */
+  /* ...but img underneath is now completely covered up; change colors to rgba; also, img used here is not a pc of content & is not accessible to screen reader, use 'role' & 'aria-label' in the html to fix this */
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.4),
+      rgba(230, 125, 34, 0.35)
+    ),
+    url("../img/eating.jpg");
+  background-size: cover;
+  background-position: center;
 }
