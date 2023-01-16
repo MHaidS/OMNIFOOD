@@ -21,7 +21,6 @@
 
 .main-nav-list {
   list-style: none;
-  /* to display the list items side-by-side */
   display: flex;
   align-items: center;
   /* to put some space bet. the list items */
@@ -523,7 +522,8 @@
 /* CTA SECTION */
 /* ************************** */
 .section-cta {
-  padding: 9.6rem 0;
+  /* padding: 9.6rem 0 12.8rem 0; */
+  padding: 4.8rem 0 12.8rem;
 }
 
 .cta {
@@ -539,13 +539,30 @@
   /* background-image: linear-gradient(to left, red, #e67e22); */
   /* gradient can also originate fr the corners */
   background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
-
-  /* temporary */
-  height: 50rem;
   overflow: hidden;
+
+  /* temporary; remove the fixed height set earlier after finishing the form bec we want the content to dictate the height */
+  /* height: 50rem; */
 }
 
+/* use the darkest color of the background for text */
 .cta-text-box {
+  padding: 4.8rem 6.4rem 6.4rem 6.4rem;
+  color: #45260a;
+  /* color: red; */
+}
+
+.cta .heading-secondary {
+  /* .heading-secondary won't automatically inherit the color fr .cta-text-box so color must be specifically specified */
+  /* color: #45260a; */
+  color: inherit;
+  margin-bottom: 3.2rem;
+}
+
+.cta-text {
+  font-size: 1.8rem;
+  line-height: 1.8;
+  margin-bottom: 4.8rem;
 }
 
 .cta-img-box {
@@ -560,4 +577,121 @@
     url("../img/eating.jpg");
   background-size: cover;
   background-position: center;
+}
+
+.cta-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 3.2rem;
+  row-gap: 2.4rem;
+}
+
+.cta-form label {
+  /* to put the label in its own line */
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+}
+.cta-form input,
+.cta-form select {
+  /* will have input occupy their entire parent */
+  width: 100;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background-color: #fdf2e9;
+  border-radius: 9px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* always make the font-color of the placeholder lighter */
+.cta-form input::placeholder {
+  color: #aaa;
+}
+
+/* focus states are meant for accessibility purposes */
+.cta *:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.8rem rgba(253, 242, 233, 0.5);
+}
+
+/* ************************** */
+/* FOOTER */
+/* ************************** */
+.footer {
+  padding: 12.8rem 0;
+  border-top: 1px solid #ddd;
+}
+
+.grid-footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+}
+
+.logo-col {
+  display: flex;
+  flex-direction: column;
+  /* push the p (.copyright) all the way to the bottom by setting margin-top to auto */
+}
+
+.footer-logo {
+  display: block;
+  margin-bottom: 3.2rem;
+}
+
+.social-links {
+  list-style: none;
+  display: flex;
+  gap: 2.4rem;
+}
+
+.social-icon {
+  height: 2.4rem;
+  width: 2.4rem;
+}
+
+.copyright {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: #767676;
+
+  margin-top: auto;
+}
+
+.footer-heading {
+  font-size: 1.8rem;
+  font-weight: 500;
+  margin-bottom: 4rem;
+}
+
+.contacts {
+  font-style: normal;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.address {
+  margin-bottom: 2.4rem;
+}
+
+.footer-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  font-size: 1.6rem;
+  color: #767676;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #555;
 }
