@@ -23,7 +23,6 @@
   list-style: none;
   display: flex;
   align-items: center;
-  /* to put some space bet. the list items */
   gap: 3.2rem;
 }
 
@@ -70,6 +69,20 @@
   .hero as well (gap) */
   padding: 4.8rem 0 9.6rem 0;
 }
+
+/* DELETE */
+/* @media (max-width: 600px) {
+  .section-hero {
+    border: 20px dashed blue;
+    background-color: blue;
+  }
+}
+
+@media (max-width: 1200px) {
+  .section-hero {
+    background-color: orangered;
+  }
+} */
 
 .hero {
   max-width: 130rem;
@@ -528,6 +541,7 @@
 
 .cta {
   display: grid;
+  /* 2/3 = 66.6%  +  1/3 = 33.3% */
   grid-template-columns: 2fr 1fr;
   /* the darker the bg-color, the darker the shadow needs to be */
   /* background-color: #e67e22; */
@@ -633,7 +647,6 @@
 .logo-col {
   display: flex;
   flex-direction: column;
-  /* push the p (.copyright) all the way to the bottom by setting margin-top to auto */
 }
 
 .footer-logo {
