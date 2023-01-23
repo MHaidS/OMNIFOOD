@@ -7,8 +7,10 @@
   justify-content: space-between;
   align-items: center;
   background-color: #fdf2e9;
+  /* we want header to be sticky later */
   height: 9.6rem;
   padding: 0 4.8rem;
+  position: relative;
 }
 
 .logo {
@@ -58,6 +60,54 @@
 .main-nav-link.nav-cta:hover,
 .main-nav-link.nav-cta:active {
   background-color: #cf711f;
+}
+
+/* MOBILE */
+.btn-mobile-nav {
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  display: none;
+}
+
+.icon-mobile-nav {
+  height: 4.8rem;
+  width: 4.8rem;
+  color: #333;
+}
+
+/* <ion-icon class="icon-mobile-nav" name="menu-outline"></ion-icon>
+      <ion-icon class="icon-mobile-nav" name="close-outline"></ion-icon> */
+
+.icon-mobile-nav[name="close-outline"] {
+  display: none;
+}
+
+/* STICKY NAVIGATION */
+/* this will be applied to the header ONLY if .sticky is the parent of it ( if .sticky is present on the body ) */
+.sticky .header {
+  /* this will take the element out of the flow & fix it in the viewport & won't move even when we scroll */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  /* to make sure that it will fill the emtire viewport */
+  width: 100%;
+  /* give it a fixed height; this value is going to be used in rootMargin in JS later */
+  height: 8rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: rgba(255, 255, 255, 0.97);
+  /* .step-img appears on top of the sticky nav; to fix it, the sticky nav  must have a z-index of a higher value */
+  z-index: 999;
+  box-shadow: 0 1.2rem 3.2rem rgba(0, 0, 0, 0.03);
+  /* sticky nav now covers the uppermost part of .section-hero, fix in .sticky .section-hero below .... */
+  /* we want the sticky nav to appear after the hero section, this can be fixed in js, 1st,remove .sticky fr header ...... */
+}
+
+.sticky .section-hero {
+  /* we want this to apply when the sticky nav appears on the header, but header is not the parent of .section-hero; what must be done is to add the .sticky not to the header but to the body instead */
+  margin-top: 9.6rem;
 }
 
 /* ************************** */
