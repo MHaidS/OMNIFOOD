@@ -223,7 +223,6 @@ body {
 .btn--form {
   background-color: #45260a;
   color: #fdf2e9;
-  /* this is going to shrink the button but still a bit taller than the input fields due to the padding set on .btn; match it w/ what's set on .cta-form */
   align-self: end;
   padding: 1.2rem;
 }

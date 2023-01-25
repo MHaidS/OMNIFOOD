@@ -406,7 +406,6 @@
   background-color: #fdf2e9;
 
   display: grid;
-  /* grid-template-columns: 1fr 1fr; ==> % value can be used as well w/o the sign; the sum does not really have to equal 100 */
   grid-template-columns: 55fr 45fr;
   align-items: center;
 }

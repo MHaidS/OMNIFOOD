@@ -5,9 +5,19 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Omnifood is an AI-powered food subscription that will make you eat healthy again, 365 days per year. It's tailored to your personal tastes & nutritional needs." />
+
   <!-- ALWAYS INCLUDE THIS LINE OF CODE!!! this meta tag is crucial for responsive web design -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+
+  <!-- appears on browsesr tab -->
+  <link rel="icon" href="img/favicon.png" />
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
+  <!-- for android, new file must be created in the home folder: manifest.webmanifest -->
+  <link rel="manifest" href="manifest.webmanifest" />
+  
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +26,8 @@
   <link rel="stylesheet" href="css/style.css" />
   <link rel="stylesheet" href="css/queries.css" />
   
-  <title>Omnifood 
-    ===> is an AI-powered food subscription tailored to your personal tastes and nutritional needs. Designed using semantic HTML5 & modern CSS, including Flexbox & CSS Grid for layout and is responsive on every possible mobile device.
+  <title>Omnifood &mdash; Whether you are on the go or at home, healthy eating should never be compromised. That's why we're here to handle the rest for you! 
+    <!-- ===> is an AI-powered food subscription tailored to your personal tastes and nutritional needs. Designed using semantic HTML5 & modern CSS, including Flexbox & CSS Grid for layout and is responsive on every possible mobile device.  -->
   </title>
 
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
@@ -549,5 +559,16 @@
 
 <!-- 
   caniuse.com
-
  -->
+
+ <!-- 
+  Lighthouse == Google Dev Tools == turn everything on except for Progressive Web App == mobile or desktop == click on Analyze ....
+  -->
+
+  <!-- Resize Images == PREVIEW -- markup -- adjust size 
+  = 64px
+  = apple-touch-icon = 180px
+  = android => 192px 512px
+    * favicon-192
+    * favicon-512
+  -->
