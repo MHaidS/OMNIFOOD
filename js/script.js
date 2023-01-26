@@ -17,7 +17,6 @@ console.log(h1);
 // 139. SET CURRENT YEAR
 const yearEl = document.querySelector(".year");
 const currentYear = new Date().getFullYear();
-// console.log(currentYear);
 yearEl.textContent = currentYear;
 
 ///////////////////////////////

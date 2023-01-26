@@ -1,4 +1,3 @@
-<!-- IN PROGRESS -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,6 +12,7 @@
 
   <!-- appears on browsesr tab -->
   <link rel="icon" href="img/favicon.png" />
+  <!-- apple -->
   <link rel="apple-touch-icon" href="img/apple-touch-icon.png" />
   <!-- for android, new file must be created in the home folder: manifest.webmanifest -->
   <link rel="manifest" href="manifest.webmanifest" />
@@ -87,11 +87,17 @@
           </div>
         </div>
         <div class="hero-image-box">
-          <img 
-            src="img/hero.png" 
+          <!-- 146. -->
+          <picture>
+            <source srcset="img/hero.webp" type="image/webp" />
+            <source srcset="img/hero-min.png" type="image/png" />
+
+            <img 
+            src="img/hero-min.png" 
             class="hero-img" 
             alt="a woman enjoying her food, meals in storage container & food bowls on a table"
-          />
+            />
+          </picture>
         </div>
       </div>
     </section>
@@ -427,23 +433,34 @@
             <h2 class="heading-secondary">Get your first meal for free!</h2>
             <p class="cta-text">Healthy, tasty and hassle-free meals are waiting for you. Start eating well today. You can cancel or pause anytime. And the first meal is on us!</p>
 
-            <form class="cta-form" action="#">
+            <!-- 148. Making the Form Work w/ Netlify Forms -->
+            <!-- forms w/c requires to submit a pw is not a free feature of netlify -->
+            <form class="cta-form" name="sign-up" netlify>
               <!-- for & id must match in order to link the input to the label -->
               <div>
                 <!-- group the labels & inputs inside their own div so that they can be used in a grid later; don't add classes to them anymore as there are already a lot of attributes present -->
                 <label for="full-name">Full Name</label>
-                <input id="full-name" type="text" 
-                placeholder="John Smith" required />
+                <input 
+                  id="full-name" 
+                  type="text" 
+                  placeholder="John Smith" 
+                  name="full-name"
+                  required />
               </div>
               <!-- on browser, when label is clicked,it will automatically select the corresponding input field -->
               <div>
                 <label for="email">Email Address</label>
-                <input id="email" type="email" placeholder="me@example.com" required/>
+                <input 
+                  id="email" 
+                  type="email" 
+                  placeholder="me@example.com" 
+                  name="email"
+                  required/>
               </div>
 
               <div>
                 <label for="select-where">How did you hear about us?</label>
-                <select id="select-where" required>
+                <select id="select-where" name="select-where" required>
                   <option value="">Choose one of the ff:</option>
                   <option value="friends">Friends & family</option>
                   <option value="youtube">Youtube</option>
@@ -562,7 +579,7 @@
  -->
 
  <!-- 
-  Lighthouse == Google Dev Tools == turn everything on except for Progressive Web App == mobile or desktop == click on Analyze ....
+  Lighthouse == Google Dev Tools == turn everything on except for Progressive Web App == mobile or desktop == click on Analyze Page Load
   -->
 
   <!-- Resize Images == PREVIEW -- markup -- adjust size 
@@ -572,3 +589,14 @@
     * favicon-192
     * favicon-512
   -->
+
+  <!-- 
+    TOOLS FOR COMPRESSING IMAGES:
+     == https://squoosh.app/
+     ! w/ jpeg, we cannot have the transparent parts of the img
+   -->
+
+   <!-- 
+    DOMAINS:
+    hover.com
+    -->
